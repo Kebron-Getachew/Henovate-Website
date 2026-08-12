@@ -1,17 +1,17 @@
 
 :root {
-  --color-black: #0a0a0a;
-  --color-charcoal: #151515;
-  --color-charcoal-light: #1c1c1c;
-  --color-card: #1a1a1a;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-white: #f5f4f0;
-  --color-white-dim: #d8d6cf;
-  --color-gray: #a3a19a;
+  --color-black: #131215;
+  --color-charcoal: #1c1a1f;
+  --color-charcoal-light: #242229;
+  --color-card: #211f25;
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-white: #f7f5f0;
+  --color-white-dim: #ddd9d0;
+  --color-gray: #ada89f;
   --color-gold: #d4af37;
   --color-gold-light: #e8c766;
   --color-gold-dim: rgba(212, 175, 55, 0.15);
-
+  
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -257,8 +257,8 @@ section {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.78) 42%, rgba(10,10,10,0.55) 68%, rgba(10,10,10,0.35) 100%),
-    linear-gradient(0deg, rgba(10,10,10,0.4), transparent 40%);
+    linear-gradient(90deg, rgba(19,18,21,0.88) 0%, rgba(19,18,21,0.68) 42%, rgba(19,18,21,0.40) 68%, rgba(19,18,21,0.15) 100%),
+    linear-gradient(0deg, rgba(19,18,21,0.25), transparent 40%);
 }
 
 .hero-inner {
