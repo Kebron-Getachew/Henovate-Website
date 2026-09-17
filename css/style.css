@@ -198,7 +198,7 @@ section {
 }
 
 .logo-img {
-  height: 48px;
+  height: 75px;
   width: auto;
 }
 
@@ -253,7 +253,8 @@ section {
   display: flex;
   align-items: center;
   gap: 36px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: 40px; 
 }
 
 .main-nav a {
