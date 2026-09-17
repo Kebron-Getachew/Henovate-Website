@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Scroll-reveal animation ----------
   const revealTargets = document.querySelectorAll(
-    '.about-card, .service-card, .contact-card, .stat-card'
+    '.about-card, .service-card, .contact-card'
   );
 
   revealTargets.forEach((el) => el.classList.add('reveal'));

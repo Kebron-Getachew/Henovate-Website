@@ -1,3 +1,6 @@
+/* ==========================================================
+   HENOVATE PROPERTY SERVICE LLC — STYLESHEET
+   ========================================================== */
 
 :root {
   --color-black: #131215;
@@ -11,7 +14,7 @@
   --color-gold: #d4af37;
   --color-gold-light: #e8c766;
   --color-gold-dim: rgba(212, 175, 55, 0.15);
-  
+
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -22,7 +25,7 @@
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.25);
 
-  --header-height: 80px;
+  --header-height: 88px;
 }
 
 /* ---------- RESET ---------- */
@@ -64,6 +67,10 @@ button:focus-visible {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 32px;
+}
+
+section[id] {
+  scroll-margin-top: var(--header-height);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -115,7 +122,7 @@ button:focus-visible {
 
 .btn-block { width: 100%; margin-top: 10px; }
 
-.btn-phone { padding: 11px 22px; font-size: 0.9rem; }
+.btn-phone { padding: 11px 24px; font-size: 0.9rem; }
 
 /* ---------- SECTION HEAD (shared) ---------- */
 .eyebrow {
@@ -158,14 +165,16 @@ section {
   padding: 100px 0;
 }
 
-/* ---------- HEADER ---------- */
+/* ---------- HEADER (transparent, floating) ---------- */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0) 100%);
+  border-bottom: none;
+  transition: background 0.3s ease;
 }
 
 .header-inner {
@@ -176,12 +185,63 @@ section {
   gap: 24px;
 }
 
-.logo-link { flex-shrink: 0; }
+.logo-link {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
 .logo-img {
-  height: 46px;
+  height: 48px;
   width: auto;
-  border-radius: 8px;
+}
+
+.logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+}
+
+.logo-tagline {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-top: 3px;
+  padding-bottom: 5px;
+}
+
+.logo-tagline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.6;
+}
+
+.logo-llc {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--color-gray);
+  margin-top: 4px;
+  align-self: center;
 }
 
 .main-nav {
@@ -237,7 +297,7 @@ section {
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 60px 0;
+  padding: calc(var(--header-height) + 40px) 0 60px;
 }
 
 .hero-bg {
@@ -264,10 +324,6 @@ section {
 .hero-inner {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 40px;
-  align-items: center;
 }
 
 .hero-title {
@@ -287,37 +343,6 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-}
-
-.hero-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.stat-card {
-  background: rgba(21, 21, 21, 0.75);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 26px 28px;
-  text-align: center;
-  backdrop-filter: blur(6px);
-  box-shadow: var(--shadow-soft);
-}
-
-.stat-number {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 2.1rem;
-  font-weight: 700;
-  color: var(--color-white);
-}
-
-.stat-label {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.85rem;
-  color: var(--color-gray);
 }
 
 /* ---------- ABOUT ---------- */
@@ -346,6 +371,7 @@ section {
 .icon-circle {
   width: 56px;
   height: 56px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: var(--color-gold-dim);
   color: var(--color-gold);
@@ -354,6 +380,8 @@ section {
   justify-content: center;
   font-size: 1.3rem;
   margin: 0 auto 18px;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .icon-circle.small {
@@ -421,28 +449,11 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.1) 55%, transparent 100%);
-}
-
-.service-icon-badge {
-  position: absolute;
-  bottom: -24px;
-  right: 24px;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
-  color: #171208;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
-  z-index: 2;
+  background: linear-gradient(to top, rgba(19, 18, 21, 0.9) 0%, rgba(19, 18, 21, 0.1) 55%, transparent 100%);
 }
 
 .service-body {
-  padding: 40px 28px 30px;
+  padding: 30px 28px 30px;
   position: relative;
 }
 
@@ -686,15 +697,6 @@ a.contact-value:hover { color: var(--color-gold-light); }
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
 
-  .hero-inner { grid-template-columns: 1fr; }
-
-  .hero-stats {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .stat-card { flex: 1 1 150px; }
-
   .about-grid { grid-template-columns: repeat(2, 1fr); }
 
   .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -707,6 +709,8 @@ a.contact-value:hover { color: var(--color-gold-light); }
 /* Mobile */
 @media (max-width: 768px) {
   section { padding: 70px 0; }
+
+  .logo-wordmark { display: none; }
 
   .main-nav { display: none; }
 
@@ -727,13 +731,11 @@ a.contact-value:hover { color: var(--color-gold-light); }
 
   .header-actions .btn-phone { display: none; }
 
-  .hero { min-height: auto; padding: 50px 0 70px; }
+  .hero { min-height: auto; padding: calc(var(--header-height) + 20px) 0 70px; }
 
   .hero-title { font-size: 2.1rem; }
 
   .hero-actions { flex-direction: column; align-items: stretch; }
-
-  .hero-stats { flex-direction: column; }
 
   .about-grid { grid-template-columns: 1fr; }
 
