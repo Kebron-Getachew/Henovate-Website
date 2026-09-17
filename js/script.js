@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- Sticky header shadow on scroll ----------
-  const onScroll = () => {
-    if (window.scrollY > 10) {
-      header.style.boxShadow = '0 6px 24px rgba(0,0,0,0.35)';
-    } else {
-      header.style.boxShadow = 'none';
-    }
-  };
+ const onScroll = () => {
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+};
   window.addEventListener('scroll', onScroll);
   onScroll();
 
