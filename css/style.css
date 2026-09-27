@@ -176,8 +176,9 @@ section {
   border-bottom: none;
   transition: background 0.3s ease;
 }
+
 .site-header.scrolled {
-  background: rgba(19, 18, 21, 0.65);
+  background: rgba(19, 18, 21, 0.92);
   backdrop-filter: blur(10px);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
@@ -198,7 +199,7 @@ section {
 }
 
 .logo-img {
-  height: 75px;
+  height: 62px;
   width: auto;
 }
 
@@ -351,8 +352,48 @@ section {
   gap: 16px;
 }
 
+/* ---------- HERO ENTRANCE ANIMATION ---------- */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > * {
+  opacity: 0;
+  animation: heroFadeUp 0.9s ease forwards;
+}
+
+.hero-content .eyebrow-light  { animation-delay: 0.15s; }
+.hero-content .hero-title     { animation-delay: 0.35s; }
+.hero-content .hero-desc      { animation-delay: 0.55s; }
+.hero-content .hero-actions   { animation-delay: 0.75s; }
+
+/* ---------- STAGGERED SCROLL REVEAL ---------- */
+.about-grid .about-card:nth-child(1) { transition-delay: 0s; }
+.about-grid .about-card:nth-child(2) { transition-delay: 0.1s; }
+.about-grid .about-card:nth-child(3) { transition-delay: 0.2s; }
+.about-grid .about-card:nth-child(4) { transition-delay: 0.3s; }
+
+.services-grid .service-card:nth-child(1) { transition-delay: 0s; }
+.services-grid .service-card:nth-child(2) { transition-delay: 0.1s; }
+.services-grid .service-card:nth-child(3) { transition-delay: 0.2s; }
+.services-grid .service-card:nth-child(4) { transition-delay: 0.3s; }
+.services-grid .service-card:nth-child(5) { transition-delay: 0.4s; }
+.services-grid .service-card:nth-child(6) { transition-delay: 0.5s; }
+
+.contact-grid .contact-card:nth-child(1) { transition-delay: 0s; }
+.contact-grid .contact-card:nth-child(2) { transition-delay: 0.15s; }
+
 /* ---------- ABOUT ---------- */
-.about { background: var(--color-black); }
+.about {
+  background: linear-gradient(160deg, #2a2116 0%, #1c1a1f 55%, #1c1a1f 100%);
+}
 
 .about-grid {
   display: grid;
@@ -411,7 +452,9 @@ section {
 }
 
 /* ---------- SERVICES ---------- */
-.services { background: var(--color-charcoal); }
+.services {
+  background: linear-gradient(160deg, #2a2116 0%, #1c1a1f 55%, #1c1a1f 100%);
+}
 
 .services-grid {
   display: grid;
@@ -499,7 +542,9 @@ section {
 .service-card-cta .btn { margin-top: 14px; }
 
 /* ---------- CONTACT ---------- */
-.contact { background: var(--color-black); }
+.contact {
+  background: linear-gradient(160deg, #2a2116 0%, #1c1a1f 55%, #1c1a1f 100%);
+}
 
 .contact-grid {
   display: grid;
