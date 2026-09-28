@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- Sticky header shadow on scroll ----------
- const onScroll = () => {
-  if (window.scrollY > 10) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-};
+  const onScroll = () => {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
   window.addEventListener('scroll', onScroll);
   onScroll();
 
@@ -59,9 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   highlightNav();
 
   // ---------- Scroll-reveal animation ----------
-  const revealTargets = document.querySelectorAll(
-    '.about-card, .service-card, .contact-card'
-  );
+  const revealTargets = document.querySelectorAll('.service-card, .contact-card');
 
   revealTargets.forEach((el) => el.classList.add('reveal'));
 
@@ -78,4 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   revealTargets.forEach((el) => observer.observe(el));
+
+  // ---------- About: card fan reveal ----------
+  const fan = document.getElementById('aboutFan');
+
+  if (fan) {
+    const fanObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            fan.classList.add('is-fanned');
+            obs.unobserve(fan); // deal once, don't replay
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    fanObserver.observe(fan);
+  }
 });
