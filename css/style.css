@@ -708,17 +708,18 @@ a.contact-value:hover { color: var(--color-gold-light); }
 .footer-meta { color: var(--color-gray); }
 
 /* ---------- SCROLL REVEAL ---------- */
+/* ---------- SCROLL REVEAL ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(32px) scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .reveal-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
-
 /* ---------- WHATSAPP FLOAT ---------- */
 .whatsapp-float {
   position: fixed;
