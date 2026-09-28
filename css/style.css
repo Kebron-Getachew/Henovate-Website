@@ -460,9 +460,14 @@ section {
 }
 
 /* ---------- SERVICES ---------- */
+/* ---------- SERVICES ---------- */
 .services {
-  background: linear-gradient(160deg, #2a2116 0%, #1c1a1f 55%, #1c1a1f 100%);
+  background: #ffffff;
 }
+
+.services .eyebrow { color: #a8841c; }
+.services .section-title { color: #1c1a1f; }
+.services .section-desc { color: #6b665f; }
 
 .services-grid {
   display: grid;
@@ -470,10 +475,11 @@ section {
   gap: 24px;
 }
 
+/* Default card = gold (same gradient as the buttons) */
 .service-card {
   position: relative;
-  background: var(--color-card);
-  border: 1px solid var(--color-border);
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
@@ -481,8 +487,7 @@ section {
 
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
 .service-photo {
@@ -502,41 +507,50 @@ section {
   transform: scale(1.08);
 }
 
-.service-photo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(19, 18, 21, 0.9) 0%, rgba(19, 18, 21, 0.1) 55%, transparent 100%);
-}
-
 .service-body {
-  padding: 30px 28px 30px;
-  position: relative;
+  padding: 24px 28px 30px;
 }
 
 .service-num {
-  position: absolute;
-  top: -30px;
-  left: 28px;
+  display: block;
+  margin-bottom: 8px;
   font-family: var(--font-display);
   font-size: 0.85rem;
-  color: rgba(212, 175, 55, 0.5);
   font-weight: 700;
+  color: #171208;
+  opacity: 0.6;
 }
 
 .service-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #171208;
 }
 
 .service-card p {
   font-size: 0.92rem;
-  color: var(--color-gray);
+  color: #3b2f0b;
 }
 
+/* Dark cards (Plumbing, Flooring) */
+.service-card-dark {
+  background: var(--color-charcoal);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.service-card-dark h3 { color: var(--color-white); }
+
+.service-card-dark p { color: var(--color-white-dim); }
+
+.service-card-dark .service-num {
+  color: var(--color-gold-light);
+  opacity: 1;
+}
+
+/* Quote CTA card */
 .service-card-cta {
-  background: linear-gradient(155deg, rgba(212, 175, 55, 0.16), rgba(21, 21, 21, 0.4));
-  border-color: rgba(212, 175, 55, 0.3);
+  background: var(--color-charcoal);
+  border-color: rgba(212, 175, 55, 0.35);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -546,6 +560,8 @@ section {
 }
 
 .service-card-cta h3 { color: var(--color-gold-light); }
+
+.service-card-cta p { color: var(--color-white-dim); }
 
 .service-card-cta .btn { margin-top: 14px; }
 
