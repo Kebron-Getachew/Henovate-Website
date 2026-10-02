@@ -489,7 +489,7 @@ section {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: max(0.8rem, calc(var(--u) * 1.7));
-  color: var(--color-gold-light);
+  color: var(--color-white);
 }
 
 /* Shared icon circle (also used in Contact) */
@@ -759,39 +759,55 @@ a.contact-value:hover { color: var(--color-gold-light); }
 }
 
 .contact-card-highlight .btn-outline i { color: #25d366; }
+
 /* ---------- FOOTER ---------- */
 .site-footer {
-  background: var(--color-black);
-  border-top: 1px solid var(--color-border);
-  padding-top: 70px;
+  background: #f5f0e4;
+  border-top: 1px solid rgba(212, 175, 55, 0.5);
+  padding-top: 80px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
+  grid-template-columns: 1.7fr 0.9fr 1.1fr 1.1fr;
   gap: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 56px;
+}
+
+/* Vertical dividers between columns (skip the first) */
+.footer-grid .footer-col:not(:first-child) {
+  border-left: 1px solid rgba(212, 175, 55, 0.6);
+  padding-left: 40px;
 }
 
 .footer-logo {
-  height: 44px;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  height: 100px;
+  width: auto;
+  margin-bottom: 18px;
 }
 
 .footer-brand p {
   font-size: 0.9rem;
-  color: var(--color-gray);
+  color: #4a4438;
   max-width: 320px;
 }
 
+/* Column headings + short gold underline */
 .footer-col h4 {
-  color: var(--color-gold);
+  color: #a8841c;
   font-family: var(--font-body);
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+}
+
+.footer-underline {
+  width: 40px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: var(--radius-full);
+  margin-bottom: 22px;
 }
 
 .footer-col a,
@@ -800,29 +816,63 @@ a.contact-value:hover { color: var(--color-gold-light); }
   align-items: center;
   gap: 10px;
   font-size: 0.92rem;
-  color: var(--color-gray);
-  margin-bottom: 13px;
+  color: #1c1a1f;
+  margin-bottom: 15px;
   transition: color 0.2s ease;
 }
 
-.footer-col a:hover { color: var(--color-gold-light); }
+.footer-col a:hover { color: #a8841c; }
 
-.footer-col i { width: 16px; color: var(--color-gold); }
+.footer-col i { width: 16px; color: #a8841c; font-size: 0.95rem; }
 
+/* CTA column */
+.footer-cta h3 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  line-height: 1.25;
+  color: #1c1a1f;
+}
+
+.footer-cta p {
+  font-size: 0.9rem;
+  color: #4a4438;
+  margin-bottom: 22px;
+}
+
+.footer-cta-btn {
+  gap: 10px;
+}
+
+.footer-col a.footer-cta-btn {
+  color: #171208;
+}
+
+.footer-cta-btn .fa-whatsapp {
+  color: #25d366;
+}
+
+.footer-cta-btn .fa-arrow-right {
+  color: inherit;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.footer-cta-btn:hover .fa-arrow-right { transform: translateX(4px); }
+
+/* Bottom bar */
 .footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(212, 175, 55, 0.5);
   padding: 24px 32px;
   font-size: 0.82rem;
-  color: var(--color-gray);
+  color: #4a4438;
 }
 
-.footer-meta { color: var(--color-gray); }
-
+.footer-meta { color: #a8841c; }
 /* ---------- SCROLL REVEAL ---------- */
 .reveal {
   opacity: 0;
@@ -872,6 +922,8 @@ a.contact-value:hover { color: var(--color-gold-light); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 
   .footer-brand { grid-column: 1 / -1; }
+
+  .footer-cta { grid-column: 1 / -1; border-left: none; padding-left: 0; margin-top: 10px; }
 }
 
 /* Mobile */
@@ -883,6 +935,8 @@ a.contact-value:hover { color: var(--color-gold-light); }
   .main-nav { display: none; }
 
   .nav-toggle { display: flex; }
+
+  .footer-col:not(:first-child) { border-left: none; padding-left: 0; }
 
   .site-header.nav-open .main-nav {
     display: flex;
@@ -922,4 +976,6 @@ a.contact-value:hover { color: var(--color-gold-light); }
   .hero-title { font-size: 1.8rem; }
 
   .about-values { grid-template-columns: 1fr; }
+
+
 }
