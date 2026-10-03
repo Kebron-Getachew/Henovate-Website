@@ -873,6 +873,28 @@ a.contact-value:hover { color: var(--color-gold-light); }
 }
 
 .footer-meta { color: #a8841c; }
+.footer-credit {
+  text-align: center;
+  padding: 14px 32px 20px;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.footer-credit p {
+  font-size: 0.78rem;
+  color: #6b6456;
+}
+
+.footer-credit a {
+  color: #a8841c;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(168, 132, 28, 0.4);
+  transition: color 0.2s ease;
+}
+
+.footer-credit a:hover {
+  color: #171208;
+}
 /* ---------- SCROLL REVEAL ---------- */
 .reveal {
   opacity: 0;
